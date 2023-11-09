@@ -20,6 +20,28 @@ code {
     monospace;
 }
 
+/* Hide the default scrollbar for Webkit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light gray background */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7; /* Gray handle */
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0; /* Darker gray handle */
+}
+
+
 .content {
   display: flex;
 }

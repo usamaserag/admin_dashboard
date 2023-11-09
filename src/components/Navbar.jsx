@@ -2,21 +2,21 @@ import React from "react";
 import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
-import ThemeButton from "./ThemeButton"
-
-
+import SearchIcon from "@mui/icons-material/Search";
+import ThemeButton from "./ThemeButton";
+import UserImage from "./UserImage";
 
 const Navbar = ({ isDark, setIsDark }) => {
   return (
-    <nav className="flex justify-between items-center h-20">
-      <span>Navbar</span>
+    <nav className="flex justify-end items-center h-16 px-4">
       <div className="flex items-center gap-5">
+        <SearchIcon />
         <Badge badgeContent={1} size="small" color="info">
           <NotificationsIcon />
         </Badge>
-
-        <ThemeButton mood={isDark} handleMood={() => setIsDark(!isDark)} />
         <SettingsIcon />
+        <UserImage userName="Usama" />
+        <ThemeButton mood={isDark} handleMood={() => setIsDark(!isDark)} />
       </div>
     </nav>
   );
