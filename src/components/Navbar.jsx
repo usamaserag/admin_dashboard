@@ -8,10 +8,10 @@ import UserImage from "./UserImage";
 
 const Navbar = ({ isDark, setIsDark }) => {
   return (
-    <nav className="flex justify-end items-center h-16 px-4">
+    <nav className="flex justify-end items-center h-16 px-4 sticky top-0 right-0 left-0">
       <div className="flex items-center gap-5">
         <SearchIcon />
-        <Badge badgeContent={1} size="small" color="info">
+        <Badge badgeContent={0} size="small" color="info">
           <NotificationsIcon />
         </Badge>
         <SettingsIcon />

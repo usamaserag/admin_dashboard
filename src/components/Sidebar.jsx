@@ -30,7 +30,7 @@ const sidebarData = [
   { text: "Posts", icon: <PostAddIcon />, url: "/posts" },
   { text: "Elements", icon: <GridViewIcon />, url: "/elements" },
   { text: "Notes", icon: <EditNoteIcon />, url: "/notes" },
-  { text: "Forms", icon: <FormatAlignCenterIcon />, url: "/forms" },
+  { text: "Forms", icon: <FormatAlignCenterIcon />, url: "/add_user" },
   { text: "Calender", icon: <CalendarMonthIcon />, url: "/calender" },
   { text: "Settings", icon: <SettingsIcon />, url: "/settings" },
   { text: "Charts", icon: <BarChartIcon />, url: "/charts" },
@@ -57,13 +57,15 @@ const Sidebar = () => {
 
   useEffect(() => {
     updateWindowWidth();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     window.addEventListener("resize", updateWindowWidth);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [windowWidth]);
   return (
-    <aside className="min-w-fit px-5 h-screen dark:bg-base-200 bg-gray-300 relative">
+    <aside className="min-w-fit px-5 dark:bg-base-200 bg-gray-300 h-screen sticky top-0 bottom-0 left-0">
       <div className="flex items-center justify-between h-16">
         <span className="p-2">
           <DashboardIcon />
@@ -82,10 +84,10 @@ const Sidebar = () => {
       <ul className="text-base-content">
         {sidebarData.map((sidebarItem, index) => (
           <li
-            className="font-medium p-2 rounded-md hover:bg-base-300"
+            className="font-normal p-2 rounded-md hover:bg-base-300"
             key={index}
           >
-            <Link to={sidebarItem.url} className="flex items-center gap-2">
+            <Link to={sidebarItem.url} className="flex items-center gap-2 text-sm">
               <span>{sidebarItem.icon}</span>
               <span className={hideText ? "hidden" : "hidden md:block"}>
                 {sidebarItem.text}

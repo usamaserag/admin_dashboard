@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import Users from "./pages/Users";
+import AddUser from "./pages/AddUser"
 import Products from "./pages/Products";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -26,16 +27,18 @@ function App() {
           <Sidebar />
           <div className="w-full overflow-hidden">
             <Navbar setIsDark={setIsDark} isDark={isDark} />
-            <div className="p-2">
+            <div className="p-2 h-[calc(100vh-64px)]">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/add_user" element={<AddUser />} />
+
               </Routes>
             </div>
+            <Footer />
           </div>
         </div>
-        <Footer />
       </BrowserRouter>
     </div>
   );
